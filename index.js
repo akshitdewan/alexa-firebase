@@ -1,22 +1,18 @@
 'use strict';
 
-
 var credentials = {
-  "type": "service_account",
-  "project_id": "alexa-d71e1",
-  "private_key_id": "eb0cd5e81154f8d7adead31a9bdef4ed5c804f9a",
-  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDMmrQnVnbG4kdN\nz9aVJJ2PhMe+WaE9h2Z85iYPDRj4t3V/wTncj6Ux1n4LHo63nHRMYlCV3UcxRDzO\nGtaK1Bcp7w+CcazVAaHtAB5VQZZga38qT2dgHg3i+dHcL1I1V+uzwaXmc+Z2qErL\nzxQPP5WvAQIFQMXsnFWXuWezUD9NUdmhw5+klmJvGBNtAi4ZiQP7nsWuxy4O0VLg\nSo6WrepTUfbryUziIVnm8iLcbDv0+CwCMGAAHQNDm+6hgXUXQwaJRXVncDhXrYSV\nlDE/7mvzyj8O3N9eWnmEiBPCDA5iJK1dPqfO43B9cOQg69RjSp6o/cdsKyX85NlL\nIsSAk9l/AgMBAAECggEAWZm2IzP+OAKH70+BTTcHuP4Q6w8dSXCuNSwkppq5wNG2\npwfbaveNBFJGSGBNZ6MgWwMC/14z+yNC7Y9bPNi8fCSwyhM1+OIKI1vV7MgYLolk\n2waC4tjGhAubF62xdqLWGZZILK+80WHJv48j3bmet1Ddrac8Be5AnX0YKLKPxi+0\no8mdObYKpKhiju0JosNXERf1P56raiCO2u30V9AI6TMJH/777P1xhDWsgl9HO0y1\nY+2l/88G8/e3MEWGpXWjWNMNIyOnL+LBTfGcJeMvVproaZm1OcobeHSFc6HJuXBA\nPKxGc9lGKExpDhulY0neQO/YJYwET1gtwVGpMQGNAQKBgQD7c+el4X5gq00bY4YX\nuUCjg9UiZ6cmwdnw3wemr1XjrTv7E22KxK3Rqk29Eky4LGXEJoB591TIrMTxN/yP\nEmZ8zuiTTEBC9nY+mQqAzh1+e+Vx3pzXgsRx3GG1RAYl64Kx+2vPuedT18/WA2VU\nJ9dcNA7dFDwPJGkipFtLvhH2HwKBgQDQTeo9Bhs3Apjq6cTwl+X04/n2aim978WZ\n60+vg7ATjcDCsgCG0OgcOHBxIpwqGRnWtWA+r0n4aa53L60nkjiMT4RmB3w4bO/n\nZN/M/h0XoB7A8iYjTLtEnDKEz4WOmALWMia79yjDwWaHXgcO9aHX23UPeS+LoVGH\n06IqEBXwoQKBgQCH+Pon4lMDlT5B9ER7qaqBgXWMgD6MH8FplkE96oxobLIFqFDQ\n/F/+A7i76Bxib2esdSF+UrefOIXa5uqEt2+CSCTOGiqZy0rPuNRMKKkcT4UYWUe4\n5jayV3jim2EzujHXaty23JFx7j6uPPHbWxwC+QeclyePDKJpoDTaNXLjAwKBgBzn\nkudg34nknF+MjL1t9oTi1Z6x4JTwnpTbKDWMqnQsKWFa3ePXPT4dPs0UJmNZFFLM\n3EwWesczsvfq77Yb/ijKJ+8Yfs49n5SWVM/XOyY6G8peT5h6X0oH+qKfQUMmKM6c\nKu/OPiPbxGRoUcZro0eWtkmtYUGY4v1cCpaXoNPBAoGALaDJerW7PrvhafdfrMZ7\nUdG6GJOsALnZHN2takB1IU2STOJy9xbgpgCac8LcsLDCH7QBwxbb5xTB8DgqWdJE\nHOTpu32dAfbmVdjrVU4rd2SOKZCzsyv360MA71/god1ypY1f5WHO65355m9xLKTe\nqwtWlY+E6I5X6a1F4GRx9D0=\n-----END PRIVATE KEY-----\n",
-  "client_email": "alexa-service-account@alexa-d71e1.iam.gserviceaccount.com",
-  "client_id": "102618368279067528310",
-  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-  "token_uri": "https://accounts.google.com/o/oauth2/token",
-  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/alexa-service-account%40alexa-d71e1.iam.gserviceaccount.com"
+    apiKey: "AIzaSyCGAhEirtKDNysgXK5b4fYU4AHZlK2d2M8",
+    authDomain: "profapp-e3c81.firebaseapp.com",
+    databaseURL: "https://profapp-e3c81.firebaseio.com",
+    projectId: "profapp-e3c81",
+    storageBucket: "profapp-e3c81.appspot.com",
+    messagingSenderId: "790698105863"
 };
+
 const Alexa = require('alexa-sdk');
 const firebase = require('firebase');
 firebase.initializeApp({
-    databaseURL: 'https://alexa-d71e1.firebaseio.com/',
+    databaseURL: 'https://profapp-e3c81.firebaseio.com',
     serviceAccount: credentials
 });
 
@@ -53,46 +49,83 @@ const languageStrings = {
     },
 };
 
-function push(){
-  var ref = firebase.database().ref().child("Text");
-  ref.set("WOWZA");
-}
-
 const handlers = {
     'LaunchRequest': function () {
         this.emit('GetFact');
     },
-    'GetNewFactIntent': function () {
-        this.emit('GetFact');
+    'GetDiscountsIntent': function () {
+        this.emit('GetDiscount');
     },
-    'GetFact': function () {
-        
-        // Get a random space fact from the space facts list
-        // Use this.t() to get corresponding language data
-        //const factArr = this.t('FACTS');
-        //const factIndex = Math.floor(Math.random() * factArr.length);
-        //const randomFact = factArr[factIndex];
-        // Create speech output
-        //const speechOutput = this.t('GET_FACT_MESSAGE') + randomFact;
-        // var ref = firebase.database().ref().child("Text").set("OMG");
-        // ref.then(() => {
+    'GetDiscount': function () {
+        var zip = this.event.request.intent.slots.city.value;
+        // var ref = firebase.database().ref().child("states/NJ/"+zip);
+
+        // ref.once('value').then((snapshot) => {
         // //alexa.emit(':ask', "Works");
-        // this.emit(':tellWithCard',speechOutput, this.t('SKILL_NAME'), randomFact);
+        // this.emit(':tellWithCard',snapshot.val() + zip, this.t('SKILL_NAME'),snapshot.val() );
         // },
         // (err) => {
-        //     this.emit(':tellWithCard',"oh no", this.t('SKILL_NAME'), randomFact);
+        //    this.emit(':tellWithCard',snapshot.val() + zip, this.t('SKILL_NAME'), snapshot.val());
         // });
-        // var ref = firebase.database().ref().child("Text").set("OMGyyy").then(function(){
-        //     this.emit(':tellWithCard',speechOutput, this.t('SKILL_NAME'), randomFact);
+        // var ref = firebase.database().ref().child("states/NJ/"+zip);
+        // //var zip = this.event.request.intent.slots.city.value;
+        // ref.once('value').then((snapshot) => {
+        // //alexa.emit(':ask', "Works");
+        // var i = 0;
+        // var output = "";
+        // var addString = "I found discounts at ";
+        // var and = " and at ";
+        // snapshot.forEach(function(child){
+        //     if(i<2){
+        //         if(i==1)
+        //             and = "";
+        //         output+=child.key + " from " + child.child("timeStart").val() + " to " + child.child("timeEnd").val() + and;
+        //     }
+        //     i++;
         // });
-        var ref = firebase.database().ref().child("Text");
-        var zip = this.event.request.intent.slots.city.value;
+        // if(output.length==0){
+        //     output = "Sorry, there are no discounts in your area";
+        //     addString = "";
+        // }
+        // output = addString + output;
+        // this.emit(':tellWithCard',output, this.t('SKILL_NAME'), output);
+        // },
+        // (err) => {
+        // this.emit(':tellWithCard',"Sorry, I had trouble processing your request. Please try again.", this.t('SKILL_NAME'), "Sorry, I had trouble processing your request. Please try again.");
+        // });
+        var ref = firebase.database().ref().child("states/NJ/"+"08536");
+        //var zip = this.event.request.intent.slots.city.value;
         ref.once('value').then((snapshot) => {
         //alexa.emit(':ask', "Works");
-        this.emit(':tellWithCard',snapshot.val() + zip, this.t('SKILL_NAME'),snapshot.val() );
+        var i = 0;
+        var output = "";
+        var addString = "I found a discount at ";
+        var and = " and at ";
+        snapshot.forEach(function(child){
+            if(i<1){
+                output+=child.key + " from " + child.child("timeStart").val() + " to " + child.child("timeEnd").val();
+                var food = child.child('foodOptions');
+                var count = 0;
+                food.forEach(function(foodChild){
+                    if(count==0)
+                        output+= " . They are offering " + foodChild.child('name').val();
+                    else if(count==1)
+                        output+= " and " + foodChild.child('name').val();
+                    count++;
+                });
+                output+= " for " + child.child("priceOfBox").val() + " dollars each";
+            }
+            i++;
+        });
+        if(output.length==0){
+            output = "Sorry, there are no discounts in your area";
+            addString = "";
+        }
+        output = addString + output;
+        this.emit(':tellWithCard',output, this.t('SKILL_NAME'), output);
         },
         (err) => {
-           this.emit(':tellWithCard',snapshot.val() + zip, this.t('SKILL_NAME'), snapshot.val());
+        this.emit(':tellWithCard',"Sorry, I had trouble processing your request. Please try again.", this.t('SKILL_NAME'), "Sorry, I had trouble processing your request. Please try again.");
         });
     },
     'AMAZON.HelpIntent': function () {
